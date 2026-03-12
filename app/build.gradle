@@ -131,4 +131,6 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
 }
 
-apply plugin: 'com.google.gms.google-services'
+// To enable Firebase Google Services processing, add google-services.json under app/
+// and re-enable the plugin line below.
+// apply plugin: 'com.google.gms.google-services'

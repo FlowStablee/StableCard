@@ -57,9 +57,14 @@ The app is backend‑agnostic but expects a fintech API capable of issuing cards
 
 ### Firebase / push notifications
 
+Firebase is optional for CI builds. The project currently **does not apply** the `com.google.gms.google-services` plugin so that GitHub Actions can build without a `google-services.json` file.
+
+To fully enable Firebase Cloud Messaging:
+
 1. Create a Firebase project and enable Cloud Messaging.
 2. Download `google-services.json` into the `app/` module root.
-3. Configure notification payloads so `FlowstableFirebaseMessagingService` can show useful alerts.
+3. Uncomment the `com.google.gms:google-services` classpath and `apply plugin: 'com.google.gms.google-services'` lines in the Gradle files.
+4. Configure notification payloads so `FlowstableFirebaseMessagingService` can show useful alerts.
 
 ## GitHub Actions & Telegram APK Delivery
 
