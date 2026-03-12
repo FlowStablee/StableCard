@@ -22,16 +22,6 @@ android {
         }
     }
 
-    signingConfigs {
-        release {
-            // TODO: replace with your real keystore path and credentials
-            storeFile file("../keystore/flowstable-release.keystore")
-            storePassword System.getenv("FLOWSTABLE_KEYSTORE_PASSWORD") ?: "changeit"
-            keyAlias "flowstable_release"
-            keyPassword System.getenv("FLOWSTABLE_KEY_PASSWORD") ?: "changeit"
-        }
-    }
-
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
@@ -40,8 +30,6 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-
-            signingConfig signingConfigs.release
         }
     }
 

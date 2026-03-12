@@ -73,7 +73,7 @@ The workflow `.github/workflows/android-build-telegram.yml`:
 - Runs on **push to `main`** or **manual dispatch**.
 - Uses the custom `./gradlew` bootstrap script to:
   - Download a compatible Gradle distribution.
-  - Build the **release APK** via `assembleRelease`.
+  - Build the **release APK** via `assembleRelease` (currently unsigned for CI).
 - Uploads `app/build/outputs/apk/release/app-release.apk` as a build artifact.
 - Sends that APK to a Telegram group using the Telegram Bot API.
 
